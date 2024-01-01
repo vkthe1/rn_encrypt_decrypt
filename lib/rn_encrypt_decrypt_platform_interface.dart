@@ -1,24 +1,24 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'encrypt_decrypt_method_channel.dart';
+import 'rn_encrypt_decrypt_method_channel.dart';
 
-abstract class EncryptDecryptPlatform extends PlatformInterface {
-  /// Constructs a EncryptDecryptPlatform.
-  EncryptDecryptPlatform() : super(token: _token);
+abstract class RnEncryptDecryptPlatform extends PlatformInterface {
+  /// Constructs a RnEncryptDecryptPlatform.
+  RnEncryptDecryptPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static EncryptDecryptPlatform _instance = MethodChannelEncryptDecrypt();
+  static RnEncryptDecryptPlatform _instance = MethodChannelRnEncryptDecrypt();
 
-  /// The default instance of [EncryptDecryptPlatform] to use.
+  /// The default instance of [RnEncryptDecryptPlatform] to use.
   ///
-  /// Defaults to [MethodChannelEncryptDecrypt].
-  static EncryptDecryptPlatform get instance => _instance;
+  /// Defaults to [MethodChannelRnEncryptDecrypt].
+  static RnEncryptDecryptPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
-  /// platform-specific class that extends [EncryptDecryptPlatform] when
+  /// platform-specific class that extends [RnEncryptDecryptPlatform] when
   /// they register themselves.
-  static set instance(EncryptDecryptPlatform instance) {
+  static set instance(RnEncryptDecryptPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

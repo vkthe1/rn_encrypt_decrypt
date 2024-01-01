@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'encrypt_decrypt_platform_interface.dart';
+import 'rn_encrypt_decrypt_platform_interface.dart';
 
-/// An implementation of [EncryptDecryptPlatform] that uses method channels.
-class MethodChannelEncryptDecrypt extends EncryptDecryptPlatform {
+/// An implementation of [RnEncryptDecryptPlatform] that uses method channels.
+class MethodChannelRnEncryptDecrypt extends RnEncryptDecryptPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('encrypt_decrypt');
+  final methodChannel = const MethodChannel('rn_encrypt_decrypt');
 
   @override
   Future<String?> getPlatformVersion() async {
@@ -28,6 +28,4 @@ class MethodChannelEncryptDecrypt extends EncryptDecryptPlatform {
     final dataString= await methodChannel.invokeMethod<String>('encrypt',args);
     return dataString;
   }
-
-
 }

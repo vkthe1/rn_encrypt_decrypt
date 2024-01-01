@@ -1,4 +1,4 @@
-group 'com.techgeek.encrypt_decrypt'
+group 'com.techgeek.rn_encrypt_decrypt'
 version '1.0-SNAPSHOT'
 
 buildscript {

@@ -1,4 +1,4 @@
-package com.techgeek.encrypt_decrypt_example
+package com.techgeek.rn_encrypt_decrypt_example
 
 import io.flutter.embedding.android.FlutterActivity
 

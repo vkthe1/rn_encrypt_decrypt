@@ -1,7 +1,7 @@
-name: encrypt_decrypt
+name: rn_encrypt_decrypt
 description: Using RnCrypt with Native Dependency create a flutter plugin.
 version: 0.0.1
-homepage:
+homepage: https://github.com/vkthe1/rn_encrypt_decrypt
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
@@ -35,10 +35,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.techgeek.encrypt_decrypt
-        pluginClass: EncryptDecryptPlugin
+        package: com.techgeek.rn_encrypt_decrypt
+        pluginClass: RnEncryptDecryptPlugin
       ios:
-        pluginClass: EncryptDecryptPlugin
+        pluginClass: RnEncryptDecryptPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

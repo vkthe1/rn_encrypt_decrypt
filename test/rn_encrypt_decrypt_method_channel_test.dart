@@ -1,10 +1,10 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:encrypt_decrypt/encrypt_decrypt_method_channel.dart';
+import 'package:rn_encrypt_decrypt/rn_encrypt_decrypt_method_channel.dart';
 
 void main() {
-  MethodChannelEncryptDecrypt platform = MethodChannelEncryptDecrypt();
-  const MethodChannel channel = MethodChannel('encrypt_decrypt');
+  MethodChannelRnEncryptDecrypt platform = MethodChannelRnEncryptDecrypt();
+  const MethodChannel channel = MethodChannel('rn_encrypt_decrypt');
 
   TestWidgetsFlutterBinding.ensureInitialized();
 

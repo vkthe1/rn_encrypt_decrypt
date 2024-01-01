@@ -1,6 +1,6 @@
-# encrypt_decrypt_example
+# rn_encrypt_decrypt_example
 
-Demonstrates how to use the encrypt_decrypt plugin.
+Demonstrates how to use the rn_encrypt_decrypt plugin.
 
 ## Getting Started
 

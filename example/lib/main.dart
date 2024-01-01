@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:encrypt_decrypt/encrypt_decrypt.dart';
+import 'package:rn_encrypt_decrypt/rn_encrypt_decrypt.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +13,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _encryptDecryptPlugin = EncryptDecrypt();
+  final _rnEncryptDecryptPlugin = RnEncryptDecrypt();
   final TextEditingController _textMessageToEncrypt=TextEditingController(text: 'I am a software Developer with keen interest to learn new tech.');
   final TextEditingController _textKey=TextEditingController(text: 'techgeek.cloud');
   //Map Data to Encrypt
-  
+
 
   @override
   void initState() {
@@ -25,11 +25,11 @@ class _MyAppState extends State<MyApp> {
   }
 
   _encryption({required String key, required String data}) {
-    return _encryptDecryptPlugin.encrypt(key,data);
+    return _rnEncryptDecryptPlugin.encrypt(key,data);
   }
 
   _decryption({required String key, required String data}) {
-    return _encryptDecryptPlugin.decrypt(key,data);
+    return _rnEncryptDecryptPlugin.decrypt(key,data);
   }
 
   String displayData = "";
@@ -70,6 +70,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                   FilledButton(
                     onPressed: () async {
+                      await _decryption(key: _textKey.text, data: displayData);
                       _textMessageToEncrypt.text=await _decryption(key: _textKey.text, data: displayData);
                       setState(() {});
                     },
@@ -83,49 +84,4 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
-
-  // String _platformVersion = 'Unknown';
-  // final _encryptDecryptPlugin = EncryptDecrypt();
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   initPlatformState();
-  // }
-  //
-  // // Platform messages are asynchronous, so we initialize in an async method.
-  // Future<void> initPlatformState() async {
-  //   String platformVersion;
-  //   // Platform messages may fail, so we use a try/catch PlatformException.
-  //   // We also handle the message potentially returning null.
-  //   try {
-  //     platformVersion =
-  //         await _encryptDecryptPlugin.getPlatformVersion() ?? 'Unknown platform version';
-  //   } on PlatformException {
-  //     platformVersion = 'Failed to get platform version.';
-  //   }
-  //
-  //   // If the widget was removed from the tree while the asynchronous platform
-  //   // message was in flight, we want to discard the reply rather than calling
-  //   // setState to update our non-existent appearance.
-  //   if (!mounted) return;
-  //
-  //   setState(() {
-  //     _platformVersion = platformVersion;
-  //   });
-  // }
-  //
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     home: Scaffold(
-  //       appBar: AppBar(
-  //         title: const Text('Plugin example app'),
-  //       ),
-  //       body: Center(
-  //         child: Text('Running on: $_platformVersion\n'),
-  //       ),
-  //     ),
-  //   );
-  // }
 }

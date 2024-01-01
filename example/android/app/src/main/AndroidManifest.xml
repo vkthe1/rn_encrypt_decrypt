@@ -1,16 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.techgeek.encrypt_decrypt_example">
+    package="com.techgeek.rn_encrypt_decrypt_example">
 
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="encrypt_decrypt_example"
+        android:label="rn_encrypt_decrypt_example"
         tools:replace="android:label">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-
             android:exported="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleTop"
